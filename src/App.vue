@@ -1,24 +1,17 @@
 <template>
   <v-app>
+    <app-bar/>
     <v-main>
-      <AppBar/>
+      <router-view/>
     </v-main>
   </v-app>
 </template>
 
+<style>
+</style>
 <script>
-import HelloWorld from './components/AppBar.vue'
 import AppBar from "@/components/AppBar";
-
 export default {
-  name: 'App',
-
-  components: {
-    AppBar,
-  },
-
-  data: () => ({
-    //
-  }),
+  components: {AppBar}
 }
 </script>
