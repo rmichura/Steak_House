@@ -69,7 +69,6 @@
 </template>
 <script>
 
-
 import Slider from "@/components/Slider";
 import BannerWithFood from "@/components/BannerWithFood";
 
@@ -78,7 +77,6 @@ export default {
   components: {
     BannerWithFood,
     Slider
-
   }
 }
 </script>
