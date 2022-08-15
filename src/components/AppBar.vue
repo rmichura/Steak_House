@@ -1,6 +1,7 @@
 <template>
   <v-app-bar
-      height="81"
+      height="65"
+      elevation="4"
   >
     <router-link to="/" class="text-black space-from-left">
       <v-app-bar-nav-icon>
@@ -145,11 +146,11 @@ export default {
 }
 
 .space-from-left {
-  margin-left: 10em;
+  margin-left: 8vw;
 }
 
 .space-from-right {
-  margin-right: 8.5em;
+  margin-right: 8.5vw;
 
   div {
     font-size: 14px;
