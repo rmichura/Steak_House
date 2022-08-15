@@ -2,6 +2,7 @@
   <v-app-bar
       height="65"
       elevation="4"
+      v-if="windowWidth > 1180"
   >
     <router-link to="/" class="text-black space-from-left">
       <v-app-bar-nav-icon>
@@ -12,7 +13,7 @@
     <router-link to="/" class="text-black text-decoration-none">
       <v-btn>
         <v-app-bar-title>
-          <span class="ma-2 font-weight-bold">Steaks</span>
+          <span class="ma-2 text-size font-weight-bold">Steaks</span>
         </v-app-bar-title>
       </v-btn>
     </router-link>
@@ -20,7 +21,7 @@
     <router-link to="/" class="text-black text-decoration-none">
       <v-btn>
         <v-app-bar-title>
-          <span class="ma-2 font-weight-bold">Burgers</span>
+          <span class="ma-2 text-size font-weight-bold">Burgers</span>
         </v-app-bar-title>
       </v-btn>
     </router-link>
@@ -28,7 +29,7 @@
     <router-link to="/" class="text-black text-decoration-none">
       <v-btn>
         <v-app-bar-title>
-          <span class="ma-2 font-weight-bold">French fires</span>
+          <span class="ma-2 text-size font-weight-bold">French fires</span>
         </v-app-bar-title>
       </v-btn>
     </router-link>
@@ -36,7 +37,7 @@
     <router-link to="/" class="text-black text-decoration-none">
       <v-btn>
         <v-app-bar-title>
-          <span class="ma-2 font-weight-bold">Drinks</span>
+          <span class="ma-2 text-size font-weight-bold">Drinks</span>
         </v-app-bar-title>
       </v-btn>
     </router-link>
@@ -44,7 +45,7 @@
     <router-link to="/" class="text-black text-decoration-none">
       <v-btn>
         <v-app-bar-title>
-          <span class="ma-2 font-weight-bold">Gdzie dowozimy?</span>
+          <span class="ma-2 text-size font-weight-bold">Gdzie dowozimy?</span>
         </v-app-bar-title>
       </v-btn>
     </router-link>
@@ -52,7 +53,7 @@
     <router-link to="/" class="text-black text-decoration-none">
       <v-btn>
         <v-app-bar-title>
-          <span class="ma-2 font-weight-bold">Kontakt</span>
+          <span class="ma-2 text-size font-weight-bold">Kontakt</span>
         </v-app-bar-title>
       </v-btn>
     </router-link>
@@ -72,7 +73,7 @@
         >
           <v-icon class="margin-icon">mdi-account</v-icon>
           <v-app-bar-title>
-            <div class="ma-2 font-weight-bold">Moje konto</div>
+            <div class="ma-2 text-size font-weight-bold">Moje konto</div>
           </v-app-bar-title>
         </v-card>
       </v-btn>
@@ -91,7 +92,7 @@
         >
           <v-icon class="margin-icon">mdi-cart</v-icon>
           <v-app-bar-title>
-            <div class="ma-2 font-weight-bold">Koszyk</div>
+            <div class="ma-2 text-size font-weight-bold">Koszyk</div>
           </v-app-bar-title>
         </v-card>
       </v-btn>
@@ -119,21 +120,39 @@
       </v-btn>
     </router-link>
   </v-app-bar>
+
+  <v-app-bar
+      v-else>
+    <app-bar/>
+  </v-app-bar>
+
 </template>
 
 <script>
 
+import AppBar from "@/components/AppBar";
 export default {
-  name: 'AppBar',
-
+  name: 'NavigatorBar',
+  components: {AppBar},
   data() {
-    return {}
+    return {
+      windowWidth: window.innerWidth,
+    };
   },
-}
+  mounted() {
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth
+    }
+  },
+};
 </script>
 <style lang="scss">
 
-.ma-2 {
+.nav-bar {
+  margin-right: 8vw;
+}
+
+.text-size {
   font-size: 14px;
 }
 

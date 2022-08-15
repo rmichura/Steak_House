@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <app-bar/>
+    <navigatorBar/>
     <v-main>
       <router-view/>
       <home-view/>
@@ -11,9 +11,9 @@
 <style>
 </style>
 <script>
-import AppBar from "@/components/AppBar";
+import NavigatorBar from "@/components/NavigatorBar";
 import HomeView from "@/views/HomeView";
 export default {
-  components: {HomeView, AppBar}
+  components: {NavigatorBar, HomeView},
 }
 </script>
