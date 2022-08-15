@@ -121,19 +121,15 @@
     </router-link>
   </v-app-bar>
 
-  <v-app-bar
-      v-else>
-    <app-bar/>
-  </v-app-bar>
-
+    <NavigatorAppBar v-else/>
 </template>
 
 <script>
 
-import AppBar from "@/components/AppBar";
+import NavigatorAppBar from "@/components/NavigatorAppBar";
 export default {
   name: 'NavigatorBar',
-  components: {AppBar},
+  components: {NavigatorAppBar},
   data() {
     return {
       windowWidth: window.innerWidth,
